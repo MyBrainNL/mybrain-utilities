@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBrain Utilities\n"
 "Report-Msgid-Bugs-To: http://mybrain.nl/\n"
-"POT-Creation-Date: 2024-12-05 13:21+0100\n"
+"POT-Creation-Date: 2024-12-05 15:25+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Marko Hoven - My Brain <support@mybrain.nl>\n"
 "Language-Team: My Brain <support@mybrain.nl>\n"
@@ -297,7 +297,7 @@ msgstr ""
 
 #: public/class-mybrain-utilities-public.php:513
 msgid ""
-"Use CSS-class(es) \"mbumap-popup hidden\" have it hidden in the front-"
+"Use CSS-class(es) \"mbumap-popup hidden\" to have it hidden in the front-"
 "end."
 msgstr ""
 

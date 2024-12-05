@@ -510,7 +510,7 @@ class Mybrain_Utilities_Public
         echo '</b><br/>* ';
         esc_html_e('Use a Paragraph Block with Extra CSS-class(es) "mbumap-popup" to add a balloon with that content to the map.', 'mybrain-utilities');
         echo '<br/>* ';
-        esc_html_e('Use CSS-class(es) "mbumap-popup hidden" have it hidden in the front-end.', 'mybrain-utilities');
+        esc_html_e('Use CSS-class(es) "mbumap-popup hidden" to have it hidden in the front-end.', 'mybrain-utilities');
         echo '<br/>';
         echo '<br/>';
         echo '</p>';
