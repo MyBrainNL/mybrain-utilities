@@ -6,8 +6,8 @@ Requires at least: 3.0.1
 Requires PHP: 7.0
 Tested up to: 6.7.0
 Stable tag: 1.0.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 My Brain Wordpress Utilities - Backup of configuration files .htaccess and wp-config, stay logged-in longer & a simple OpenStreetMap Map.
 
