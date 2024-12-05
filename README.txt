@@ -17,7 +17,7 @@ My Brain Wordpress Utilities - Backup of configuration files .htaccess and wp-co
 MyBrain Utilities uses the following third-party resources:
 
 WordPress plugin boilerplate generator, WPPB by Enrique Chavez
-License: Open Data Commons Open Database License (ODbL)
+License: GPLv2
 Source: https://wppb.me/
 
 OpenStreetMap, by the OpenStreetMap Foundation (OSMF)
@@ -60,7 +60,7 @@ Inludes a standard marker and optional information popup.
 
 = MANUAL INSTALLATION =
 
-1. Download the 'my-brain-utilities' zip file.
+1. Download the 'mybrain-utilities' zip file.
 2. Extract the content and copy to the `/wp-content/plugins/` directory of your WordPress installation.
 3. Navigate to your WordPress dashboard, 'Plugins > Installed Plugins'.
 4. Find the 'MyBrain Utilities' plugin and activate.
@@ -74,13 +74,9 @@ Inludes a standard marker and optional information popup.
 
 No, alerts are only e-mailed to the Administrator address as defined in your Wordpress dashboard, 'Settings > General'.
 
-= What about foo bar? =
-
-We do not supply a foo bar.
-
 = Where can I report problems or bugs? =
 
-You can report problems on [this support forum](https://wordpress.org/support/plugin/my-brain-utilities/).
+You can report problems on [this support forum](https://wordpress.org/support/plugin/mybrain-utilities/).
 
 
 == Screenshots ==
@@ -89,13 +85,14 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 2. MyBrain Utilities HTAccess Keeper Settings.
 3. MyBrain Utilities Keep My Login Settings.
 4. MyBrain Utilities Maps Settings.
-5. Sample Openstreetmap/Leaflet Map.
+5. Sample Shortcode and Popup-information on Page-Edit screen.
+6. Sample Openstreetmap/Leaflet Map on the website.
 
 
 == Changelog ==
 
 = 1.0.2 =
-* Initial release - 25 November 2024
+* Initial release - 5 December 2024
 
 = 1.0.1 =
 * Merged the HTAccess_Keeper plugin into the MyBrain Utilities Plugin

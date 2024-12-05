@@ -1,11 +1,11 @@
-# Copyright (C) 2019 Purplekey.com
+# Copyright (2) 2024 My Brain
 # This file is distributed under the same license as the Mybrain_Utilities package.
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MyBrain Utilities\n"
 "Report-Msgid-Bugs-To: http://mybrain.nl/\n"
-"POT-Creation-Date: 2024-11-27 11:16+0100\n"
+"POT-Creation-Date: 2024-12-05 13:21+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Marko Hoven - My Brain <support@mybrain.nl>\n"
 "Language-Team: My Brain <support@mybrain.nl>\n"
