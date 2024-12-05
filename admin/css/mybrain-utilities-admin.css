@@ -1,0 +1,98 @@
+.mbu-version {
+    font-size: 12px;
+    font-weight: normal;
+    color: #7a919e;
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+.has-large-font-size {
+    font-size: larger;
+}
+.has-small-font-size {
+    font-size: smaller;
+}
+
+.red {
+    color: #990000;
+}
+
+.warning {
+    font-weight: bold;
+}
+
+textarea {
+    resize: both;
+}
+
+#editor .hidden {
+    display: block;
+    background-color: #ffff00;
+}
+.tab-body {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    padding: 1px 20px 20px 20px;
+}
+
+.button-right-top {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.button-right-top p.submit {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.tzCheckBox {
+    background: url('../images/checkboxbackground.png ') no-repeat right bottom;
+    display: inline-block;
+    min-width: 60px;
+    height: 33px;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    margin: 8px 0 0 20px;
+}
+
+.tzCheckBox.checked {
+    background-position: top left;
+    margin: 8px 0 0 8px;
+}
+
+.tzCheckBox .tzCBContent {
+    color: white;
+    line-height: 32px;
+    padding-right: 38px;
+    text-align: right;
+    font-size: 18px;
+}
+
+.tzCheckBox.checked .tzCBContent {
+    text-align: left;
+    padding: 0 0 0 38px;
+}
+
+.tzCBPart {
+    background: url('../images/checkboxbackground.png ') no-repeat left bottom;
+    width: 14px;
+    position: absolute;
+    top: 0;
+    left: -14px;
+    height: 33px;
+    overflow: hidden;
+}
+
+.tzCheckBox.checked .tzCBPart {
+    background-position: top right;
+    left: auto;
+    right: -14px;
+}
+.nav-tab-active, .nav-tab-active:focus, .nav-tab-active:focus:active, .nav-tab-active:hover {
+    border-top: 2px solid #2271b1;
+}
