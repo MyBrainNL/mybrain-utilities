@@ -5,7 +5,7 @@ Tags: utilities
 Requires at least: 3.0.1
 Requires PHP: 7.0
 Tested up to: 6.7.0
-Stable tag: 1.0.2
+Stable tag: 1.0.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -14,7 +14,7 @@ My Brain Wordpress Utilities - Backup of configuration files .htaccess and wp-co
 
 == Copyright ==
 
-Copyright (C) 1999-2024 My Brain
+Copyright (C) 1999-2025 My Brain
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -106,6 +106,12 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 
 == Changelog ==
+
+= 1.0.4 =
+* Improvement for is_plugin_active('htaccess-keeper.php') - 26 March 2025
+
+= 1.0.3 =
+* Improvements for Wordpress Plugin Review - 30 January 2025
 
 = 1.0.2 =
 * Initial release - 5 December 2024

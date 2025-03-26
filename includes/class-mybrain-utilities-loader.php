@@ -52,7 +52,7 @@ class Mybrain_Utilities_Loader {
 		$this->filters = array();
 
 	}
-
+	
 	/**
 	 * Add a new action to the collection to be registered with WordPress.
 	 *

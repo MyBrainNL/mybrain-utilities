@@ -11,6 +11,7 @@
  * @package    Mybrain_Utilities
  * @subpackage Mybrain_Utilities/admin/partials
  */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 //20240901
 if (!current_user_can("manage_options")) {

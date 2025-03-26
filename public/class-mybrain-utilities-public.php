@@ -57,7 +57,8 @@ class Mybrain_Utilities_Public
 
         $options = get_option('mybrain_utilities_options');
         if (isset($options['htaccesskeeperenabled']) && ($options['htaccesskeeperenabled'] == 'yes')) {
-            if (is_plugin_active('htaccess-keeper.php') == false) {
+            // 20250326 - to prevent "Call to undefined function is_plugin_active()" - if (is_plugin_active('htaccess-keeper.php') == false) {
+            if (!in_array('htaccess-keeper.php', (array) get_option('active_plugins', array()))) {
                 //20240904 - htaccess keeper!
                 add_action('init', array($this, 'mybrain_utilities_run_htaccess_keeper'), 1);
             }
@@ -71,6 +72,7 @@ class Mybrain_Utilities_Public
             add_filter('auth_cookie_expiration', array($this, 'mybrain_utilities_keep_me_logged_in_for_1_year'));
         }
     }
+
 
     /**
      * Register the stylesheets for the public-facing side of the site.
@@ -138,6 +140,71 @@ class Mybrain_Utilities_Public
 
 
 
+    //20250130 - CUSTOM sanitize_callback FOR register_setting
+    /**
+     * custom sanitize settings
+     */
+    public function mybrain_utilities_sanitize_settings_callback( array $option ) : array
+    {
+        $original_value = $option;
+
+        foreach ($option as $key => $value) {
+
+            switch ($key) {
+                case 'this_is_empty':
+                    $value = '';
+                    break;
+                case 'htaccesskeeperenabled':
+                case 'keeploginenabled':
+                case 'mapenabled':
+                case 'this_is_toggled':
+                    $value = sanitize_text_field( $value );
+                    if ($value !== 'no') {
+                        $value = 'yes';
+                    }
+                    break;
+                case 'this_is_active':
+                    $value = sanitize_text_field( $value );
+                    if ($value !== 'disabled') {
+                        $value = 'enabled';
+                    }
+                    break;
+                case 'this_is_text':
+                    $value = sanitize_text_field( $value );
+                    break;
+                case 'this_is_textarea':
+                    $value = sanitize_textarea_field( $value );
+                    break;
+                case 'this_is_email':
+                    $value = sanitize_email( $value );
+                    break;
+                case 'this_is_url':
+                    $value = sanitize_url( $value );
+                    break;
+                case 'this_is_selected':
+                case 'this_is_checked':
+                case 'this_is_radio':
+                    $value = sanitize_text_field( $value );
+                    if (!in_array($value, array('option1','option2','option3'))) {
+                        $value = 'option1';
+                    }
+                    break;
+                case 'keeplogintimeout':
+                    $value = sanitize_text_field( $value );
+                    if (!in_array($value, array('86400','172800','604800','1209600','2592000','7776000','15552000','31556926','126230400'))) {
+                        $value = '86400';
+                    }
+                    break;
+            }
+
+            $option[$key] = $value;
+        }
+   
+        return apply_filters( 'mybrain_utilities_sanitize_settings_filter', $option, $original_value );
+    }
+
+
+
     //20240901 - For storage of all the settings
     /**
      * custom option and settings
@@ -145,7 +212,14 @@ class Mybrain_Utilities_Public
     public function mybrain_utilities_settings_init()
     {
         // register a new setting for "mybrain_utilities" page
-        register_setting('mybrain_utilities', 'mybrain_utilities_options');
+        register_setting(
+            'mybrain_utilities',
+            'mybrain_utilities_options',
+            array(
+                'type'              => 'array',
+                'sanitize_callback' => array($this, 'mybrain_utilities_sanitize_settings_callback'),
+            )
+        );
 
         // register a new section in the "mybrain_utilities" page
         add_settings_section(
@@ -752,6 +826,7 @@ class Mybrain_Utilities_Public
     //20240904 - htaccess keeper!
     public function mybrain_utilities_run_htaccess_keeper($args)
     {
+
         $filehta = ABSPATH.'.htaccess';
         $filebck = ABSPATH.'.htaccess-keeper';
         if (file_exists($filehta)) {

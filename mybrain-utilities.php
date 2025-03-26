@@ -8,7 +8,7 @@
  * Plugin Name:       MyBrain Utilities
  * Plugin URI:        https://github.com/MyBrainNL/mybrain-utilities
  * Description:       My Brain Wordpress Utilities - Backup of configuration files .htaccess and wp-config, stay logged-in longer & a simple OpenStreetMap Map.
- * Version:           1.0.2
+ * Version:           1.0.4
  * Requires at least: 3.0.1
  * Requires PHP:      7.0
  * Author:            My Brain - Marko Hoven
@@ -18,7 +18,7 @@
  * Text Domain:       mybrain-utilities
  * Domain Path:       /languages
  *
- * Copyright (C) 1999-2024 My Brain
+ * Copyright (C) 1999-2025 My Brain
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ if (defined('MYBRAIN_UTILITIES_VERSION') || class_exists('Mybrain_Utilities')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('MYBRAIN_UTILITIES_VERSION', '1.0.2');
+define('MYBRAIN_UTILITIES_VERSION', '1.0.4');
 define('MYBRAIN_UTILITIES_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
 /**
