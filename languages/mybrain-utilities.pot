@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBrain Utilities\n"
 "Report-Msgid-Bugs-To: http://mybrain.nl/\n"
-"POT-Creation-Date: 2024-12-05 15:25+0100\n"
+"POT-Creation-Date: 2025-04-04 09:50+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Marko Hoven - My Brain <support@mybrain.nl>\n"
 "Language-Team: My Brain <support@mybrain.nl>\n"
@@ -27,303 +27,303 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-5: package.json\n"
 "X-Poedit-SearchPathExcluded-6: README.md\n"
 
-#: admin/class-mybrain-utilities-admin.php:124
+#: admin/class-mybrain-utilities-admin.php:100
 msgid "MyBrain Utilities Settings"
 msgstr ""
 
-#: admin/class-mybrain-utilities-admin.php:125
+#: admin/class-mybrain-utilities-admin.php:101
 msgid "MyBrain Utilities"
 msgstr ""
 
-#: admin/class-mybrain-utilities-admin.php:144
+#: admin/class-mybrain-utilities-admin.php:120
 msgid "Settings"
 msgstr ""
 
-#: admin/class-mybrain-utilities-admin.php:164
+#: admin/class-mybrain-utilities-admin.php:140
 msgid "\"MyBrain Utilities\" Wordpress Plugin by"
 msgstr ""
 
-#: admin/class-mybrain-utilities-admin.php:166
+#: admin/class-mybrain-utilities-admin.php:142
 msgid "Have a nice day!"
 msgstr ""
 
-#: admin/partials/mybrain-utilities-admin-display.php:17
+#: admin/partials/mybrain-utilities-admin-display.php:18
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: admin/partials/mybrain-utilities-admin-display.php:25
-#: public/class-mybrain-utilities-public.php:153
+#: admin/partials/mybrain-utilities-admin-display.php:26
+#: public/class-mybrain-utilities-public.php:199
 msgid "About"
 msgstr ""
 
-#: admin/partials/mybrain-utilities-admin-display.php:28
+#: admin/partials/mybrain-utilities-admin-display.php:29
 msgid "Maps"
 msgstr ""
 
-#: admin/partials/mybrain-utilities-admin-display.php:35
+#: admin/partials/mybrain-utilities-admin-display.php:36
 msgid "Save Settings"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:182
+#: public/class-mybrain-utilities-public.php:228
 msgid "HTAccess Keeper"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:194
+#: public/class-mybrain-utilities-public.php:240
 msgid "Enable Protection"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:200
+#: public/class-mybrain-utilities-public.php:246
 msgid ""
 "An e-mail will be sent to the Administration Email Address, whenever a "
 "damaged file has been restored."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:213
+#: public/class-mybrain-utilities-public.php:258
 msgid "Maps Shortcode"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:225
+#: public/class-mybrain-utilities-public.php:270
 msgid "Enable Shortcode"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:231
+#: public/class-mybrain-utilities-public.php:276
 msgid "Activate the shortcode [mbumap]"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:244
+#: public/class-mybrain-utilities-public.php:288
 msgid "Keep My Login"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:256
+#: public/class-mybrain-utilities-public.php:300
 msgid "Enable Keep_me_logged_in"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:262
+#: public/class-mybrain-utilities-public.php:306
 msgid ""
 "Keep your login active longer than the standard Wordpress Login Cookie "
 "time-out."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:273
+#: public/class-mybrain-utilities-public.php:316
 msgid "Time-out"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:279
+#: public/class-mybrain-utilities-public.php:322
 msgid "Select how long you wish to stay logged in."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:281
+#: public/class-mybrain-utilities-public.php:324
 msgid "1 Day"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:282
+#: public/class-mybrain-utilities-public.php:325
 msgid "2 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:283
+#: public/class-mybrain-utilities-public.php:326
 msgid "7 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:284
+#: public/class-mybrain-utilities-public.php:327
 msgid "14 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:285
+#: public/class-mybrain-utilities-public.php:328
 msgid "30 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:286
+#: public/class-mybrain-utilities-public.php:329
 msgid "90 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:287
+#: public/class-mybrain-utilities-public.php:330
 msgid "180 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:288
+#: public/class-mybrain-utilities-public.php:331
 msgid "365 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:289
+#: public/class-mybrain-utilities-public.php:332
 msgid "1461 Days"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:300
+#: public/class-mybrain-utilities-public.php:342
 msgid "Unused Sample Settings"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:312
+#: public/class-mybrain-utilities-public.php:354
 msgid "Toggle option"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:318
+#: public/class-mybrain-utilities-public.php:360
 msgid "Generic toggle"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:330
+#: public/class-mybrain-utilities-public.php:371
 msgid "Combobox enabled option"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:336
+#: public/class-mybrain-utilities-public.php:377
 msgid "Enabled/disabled selectbox"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:345
-#: public/class-mybrain-utilities-public.php:361
+#: public/class-mybrain-utilities-public.php:385
+#: public/class-mybrain-utilities-public.php:400
 msgid "Text option"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:351
+#: public/class-mybrain-utilities-public.php:391
 msgid "Generic text field"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:353
-#: public/class-mybrain-utilities-public.php:369
+#: public/class-mybrain-utilities-public.php:393
+#: public/class-mybrain-utilities-public.php:408
 msgid "Type your text here"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:367
+#: public/class-mybrain-utilities-public.php:406
 msgid "Generic textarea field"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:377
+#: public/class-mybrain-utilities-public.php:415
 msgid "Selectbox option"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:383
+#: public/class-mybrain-utilities-public.php:421
 msgid "Generic selectbox"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:385
-#: public/class-mybrain-utilities-public.php:405
-#: public/class-mybrain-utilities-public.php:426
+#: public/class-mybrain-utilities-public.php:423
+#: public/class-mybrain-utilities-public.php:442
+#: public/class-mybrain-utilities-public.php:462
 msgid "Option 1"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:386
-#: public/class-mybrain-utilities-public.php:406
-#: public/class-mybrain-utilities-public.php:427
+#: public/class-mybrain-utilities-public.php:424
+#: public/class-mybrain-utilities-public.php:443
+#: public/class-mybrain-utilities-public.php:463
 msgid "Option 2"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:387
-#: public/class-mybrain-utilities-public.php:407
-#: public/class-mybrain-utilities-public.php:428
+#: public/class-mybrain-utilities-public.php:425
+#: public/class-mybrain-utilities-public.php:444
+#: public/class-mybrain-utilities-public.php:464
 msgid "Option 3"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:397
+#: public/class-mybrain-utilities-public.php:434
 msgid "Checkbox options"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:403
+#: public/class-mybrain-utilities-public.php:440
 msgid "Generic checkboxes"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:418
+#: public/class-mybrain-utilities-public.php:454
 msgid "Radiobutton options"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:424
+#: public/class-mybrain-utilities-public.php:460
 msgid "Generic radiobuttons"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:449
+#: public/class-mybrain-utilities-public.php:484
 msgid "This plugin provides various utilities for Wordpress"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:451
+#: public/class-mybrain-utilities-public.php:486
 msgid "HTAccess_Keeper"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:453
+#: public/class-mybrain-utilities-public.php:488
 msgid "Keep_me_logged_in"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:455
+#: public/class-mybrain-utilities-public.php:490
 msgid "OpenStreetMap/Leaflet Shortcode"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:473
+#: public/class-mybrain-utilities-public.php:508
 msgid ""
 "Checks, backs up and restores your .htaccess and wp-config.php files."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:475
+#: public/class-mybrain-utilities-public.php:510
 msgid ""
 "Makes a backup when files are modified and restores when a 0 bytes file "
 "has been detected."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:480
+#: public/class-mybrain-utilities-public.php:515
 msgid ""
 "WARNING: Old version of \"HTAccess Keeper\" detected - plugin already "
 "active!"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:483
+#: public/class-mybrain-utilities-public.php:518
 msgid "Please "
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:485
+#: public/class-mybrain-utilities-public.php:520
 msgid "deactivate"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:487
+#: public/class-mybrain-utilities-public.php:522
 msgid " the old stand-alone plugin."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:501
+#: public/class-mybrain-utilities-public.php:536
 msgid "Add a simple OpenStreetMap/Leaflet Shortcode"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:505
+#: public/class-mybrain-utilities-public.php:540
 msgid "center = map center"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:507
+#: public/class-mybrain-utilities-public.php:542
 msgid "coords = places a marker"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:509
+#: public/class-mybrain-utilities-public.php:544
 msgid "How to add a marker popup?"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:511
+#: public/class-mybrain-utilities-public.php:546
 msgid ""
 "Use a Paragraph Block with Extra CSS-class(es) \"mbumap-popup\" to add a "
 "balloon with that content to the map."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:513
+#: public/class-mybrain-utilities-public.php:548
 msgid ""
 "Use CSS-class(es) \"mbumap-popup hidden\" to have it hidden in the front-"
 "end."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:529
+#: public/class-mybrain-utilities-public.php:564
 msgid "Stay logged in longer."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:531
+#: public/class-mybrain-utilities-public.php:566
 msgid "You may need to login again after you change the time-out value."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:533
+#: public/class-mybrain-utilities-public.php:568
 msgid ""
 "WordPress will keep you logged in for 48 hours. If you've clicked the "
 "\"Remember Me\" checkbox at login, you get remembered for 14 days."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:547
+#: public/class-mybrain-utilities-public.php:582
 msgid ""
 "Settings below are not in use, and for code demonstration purposes only."
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:573
+#: public/class-mybrain-utilities-public.php:608
 msgid "enabled"
 msgstr ""
 
-#: public/class-mybrain-utilities-public.php:578
+#: public/class-mybrain-utilities-public.php:613
 msgid "disabled"
 msgstr ""

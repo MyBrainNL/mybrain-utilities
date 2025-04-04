@@ -55,7 +55,7 @@ class Mybrain_Utilities_Public
         //20240901 - settings
         add_action('admin_init', array($this, 'mybrain_utilities_settings_init'));
 
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         if (isset($options['htaccesskeeperenabled']) && ($options['htaccesskeeperenabled'] == 'yes')) {
             // 20250326 - to prevent "Call to undefined function is_plugin_active()" - if (is_plugin_active('htaccess-keeper.php') == false) {
             if (!in_array('htaccess-keeper.php', (array) get_option('active_plugins', array()))) {
@@ -82,19 +82,7 @@ class Mybrain_Utilities_Public
     public function enqueue_styles()
     {
 
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in Mybrain_Utilities_Loader as all of the hooks are defined
-         * in that particular class.
-         *
-         * The Mybrain_Utilities_Loader will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
-
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         if (isset($options['mapenabled']) && ($options['mapenabled'] == 'yes')) {
 
             global $post;
@@ -113,21 +101,9 @@ class Mybrain_Utilities_Public
     public function enqueue_scripts()
     {
 
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in Mybrain_Utilities_Loader as all of the hooks are defined
-         * in that particular class.
-         *
-         * The Mybrain_Utilities_Loader will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
-
         wp_enqueue_script('mybrain-utilities', plugin_dir_url(__FILE__) . 'js/mybrain-utilities-public.js', array( 'jquery' ), $this->version, false);
 
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         if (isset($options['mapenabled']) && ($options['mapenabled'] == 'yes')) {
 
             global $post;
@@ -144,12 +120,10 @@ class Mybrain_Utilities_Public
     /**
      * custom sanitize settings
      */
-    public function mybrain_utilities_sanitize_settings_callback( array $option ) : array
+    public function mybrain_utilities_sanitize_settings_callback(array $option): array
     {
         $original_value = $option;
-
         foreach ($option as $key => $value) {
-
             switch ($key) {
                 case 'this_is_empty':
                     $value = '';
@@ -158,49 +132,47 @@ class Mybrain_Utilities_Public
                 case 'keeploginenabled':
                 case 'mapenabled':
                 case 'this_is_toggled':
-                    $value = sanitize_text_field( $value );
+                    $value = sanitize_text_field($value);
                     if ($value !== 'no') {
                         $value = 'yes';
                     }
                     break;
                 case 'this_is_active':
-                    $value = sanitize_text_field( $value );
+                    $value = sanitize_text_field($value);
                     if ($value !== 'disabled') {
                         $value = 'enabled';
                     }
                     break;
                 case 'this_is_text':
-                    $value = sanitize_text_field( $value );
+                    $value = sanitize_text_field($value);
                     break;
                 case 'this_is_textarea':
-                    $value = sanitize_textarea_field( $value );
+                    $value = sanitize_textarea_field($value);
                     break;
                 case 'this_is_email':
-                    $value = sanitize_email( $value );
+                    $value = sanitize_email($value);
                     break;
                 case 'this_is_url':
-                    $value = sanitize_url( $value );
+                    $value = sanitize_url($value);
                     break;
                 case 'this_is_selected':
                 case 'this_is_checked':
                 case 'this_is_radio':
-                    $value = sanitize_text_field( $value );
+                    $value = sanitize_text_field($value);
                     if (!in_array($value, array('option1','option2','option3'))) {
                         $value = 'option1';
                     }
                     break;
                 case 'keeplogintimeout':
-                    $value = sanitize_text_field( $value );
+                    $value = sanitize_text_field($value);
                     if (!in_array($value, array('86400','172800','604800','1209600','2592000','7776000','15552000','31556926','126230400'))) {
                         $value = '86400';
                     }
                     break;
             }
-
             $option[$key] = $value;
         }
-   
-        return apply_filters( 'mybrain_utilities_sanitize_settings_filter', $option, $original_value );
+        return apply_filters('mybrain_utilities_sanitize_settings_filter', $option, $original_value);
     }
 
 
@@ -277,7 +249,6 @@ class Mybrain_Utilities_Public
                 'default' => 'yes', // unused - a toggle can not have a default
                 'direction' => 'vertical',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -308,7 +279,6 @@ class Mybrain_Utilities_Public
                 'default' => 'yes', // unused - a toggle can not have a default
                 'direction' => 'vertical',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -339,7 +309,6 @@ class Mybrain_Utilities_Public
                 'default' => 'yes', // unused - a toggle can not have a default
                 'direction' => 'vertical',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
         add_settings_field(
@@ -364,7 +333,6 @@ class Mybrain_Utilities_Public
                 ],
                 'default' => '15552000',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -395,7 +363,6 @@ class Mybrain_Utilities_Public
                 'default' => 'yes', // unused - a toggle can not have a default
                 'direction' => 'vertical',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -410,7 +377,6 @@ class Mybrain_Utilities_Public
                 'description' => __('Enabled/disabled selectbox', 'mybrain-utilities'),
                 'default' => 'disabled',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -426,7 +392,6 @@ class Mybrain_Utilities_Public
                 'default' => 'powered by My Brain',
                 'placeholder' => __('Type your text here', 'mybrain-utilities'),
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -442,7 +407,6 @@ class Mybrain_Utilities_Public
                 'default' => 'powered by My Brain!',
                 'placeholder' => __('Type your text here', 'mybrain-utilities'),
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -462,7 +426,6 @@ class Mybrain_Utilities_Public
                 ],
                 'default' => '',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -483,7 +446,6 @@ class Mybrain_Utilities_Public
                 'default' => '',
                 'direction' => 'vertical',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -504,7 +466,6 @@ class Mybrain_Utilities_Public
                 'default' => 'option2',
                 'direction' => 'vertical',
                 'class' => '',
-                // 'mybrain_utilities_custom_data' => 'custom',
             ]
         );
 
@@ -529,10 +490,13 @@ class Mybrain_Utilities_Public
         esc_html_e('OpenStreetMap/Leaflet Shortcode', 'mybrain-utilities');
         echo '</li></ul>';
         echo '</p>';
-        // echo '<pre class="hidden">';
-        // $options = get_option('mybrain_utilities_options');
-        // print_r($options);
-        // echo '</pre>';
+
+        if (isset($_GET['show']) && ($_GET['show'] == 'options')) {
+            $options = get_option('mybrain_utilities_options', array());
+            echo '<pre class="hidden">';
+            print_r($options);
+            echo '</pre>';
+        }
     }
 
 
@@ -635,7 +599,7 @@ class Mybrain_Utilities_Public
     // you can add custom key value pairs to be used inside your callbacks.
     public function mybrain_utilities_field_cb_enabled($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         echo '<select id="'.esc_attr($args['label_for']).'"';
         if (!empty($args['mybrain_utilities_custom_data'])) {
             echo ' data-custom="'.esc_attr($args['mybrain_utilities_custom_data']).'"';
@@ -661,7 +625,7 @@ class Mybrain_Utilities_Public
 
     public function mybrain_utilities_field_select($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         echo '<select id="'.esc_attr($args['label_for']).'"';
         if (!empty($args['mybrain_utilities_custom_data'])) {
             echo ' data-custom="'.esc_attr($args['mybrain_utilities_custom_data']).'"';
@@ -684,7 +648,7 @@ class Mybrain_Utilities_Public
 
     public function mybrain_utilities_field_checkbox($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         foreach ($args['options'] as $value => $description) {
             echo '<input type="checkbox" id="'.esc_attr($args['label_for']).'"';
             echo ' value="'.esc_html($value).'" name="mybrain_utilities_options[';
@@ -704,9 +668,10 @@ class Mybrain_Utilities_Public
             echo '</small></p>';
         }
     }
+
     public function mybrain_utilities_field_toggle($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
 
         $value = $args['toggled'];
         echo '<input type="checkbox" id="'.esc_attr($args['label_for']).'"';
@@ -737,7 +702,7 @@ class Mybrain_Utilities_Public
 
     public function mybrain_utilities_field_radio($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         foreach ($args['options'] as $value => $description) {
             echo '<input type="radio" id="'.esc_attr($args['label_for']).'"';
             echo ' value="'.esc_html($value).'" name="mybrain_utilities_options[';
@@ -760,7 +725,7 @@ class Mybrain_Utilities_Public
 
     public function mybrain_utilities_field_hidden($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         echo '<input type="hidden" id="'.esc_attr($args['label_for']).'"';
         if (!empty($args['mybrain_utilities_custom_data'])) {
             echo ' data-custom="'.esc_attr($args['mybrain_utilities_custom_data']).'"';
@@ -776,9 +741,10 @@ class Mybrain_Utilities_Public
             echo '</small></p>';
         }
     }
+
     public function mybrain_utilities_field_text($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         echo '<input type="text" id="'.esc_attr($args['label_for']).'"';
         if (!empty($args['mybrain_utilities_custom_data'])) {
             echo ' data-custom="'.esc_attr($args['mybrain_utilities_custom_data']).'"';
@@ -800,7 +766,7 @@ class Mybrain_Utilities_Public
 
     public function mybrain_utilities_field_textarea($args)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         echo '<textarea id="'.esc_attr($args['label_for']).'"';
         if (!empty($args['mybrain_utilities_custom_data'])) {
             echo ' data-custom="'.esc_attr($args['mybrain_utilities_custom_data']).'"';
@@ -826,7 +792,6 @@ class Mybrain_Utilities_Public
     //20240904 - htaccess keeper!
     public function mybrain_utilities_run_htaccess_keeper($args)
     {
-
         $filehta = ABSPATH.'.htaccess';
         $filebck = ABSPATH.'.htaccess-keeper';
         if (file_exists($filehta)) {
@@ -930,11 +895,11 @@ class Mybrain_Utilities_Public
     //20240904 - keeplogin!
     public function mybrain_utilities_keep_me_logged_in_for_1_year($expirein)
     {
-        $options = get_option('mybrain_utilities_options');
+        $options = get_option('mybrain_utilities_options', array());
         if (isset($options['keeploginenabled']) && ($options['keeploginenabled'] == 'yes')) {
             if (isset($options['keeplogintimeout']) && is_numeric($options['keeplogintimeout']) && ($options['keeplogintimeout'] > 0)) {
-                $expirein = $options['keeplogintimeout'];
                 // return 31556926; // 1 year in seconds
+                $expirein = $options['keeplogintimeout'];
             }
         }
         return $expirein;

@@ -71,18 +71,6 @@ class Mybrain_Utilities_Admin
     public function enqueue_styles()
     {
 
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in Mybrain_Utilities_Loader as all of the hooks are defined
-         * in that particular class.
-         *
-         * The Mybrain_Utilities_Loader will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
-
         wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/mybrain-utilities-admin.css', array(), $this->version, 'all');
 
     }
@@ -94,18 +82,6 @@ class Mybrain_Utilities_Admin
      */
     public function enqueue_scripts()
     {
-
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in Mybrain_Utilities_Loader as all of the hooks are defined
-         * in that particular class.
-         *
-         * The Mybrain_Utilities_Loader will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
 
         wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/mybrain-utilities-admin.js', array( 'jquery' ), $this->version, false);
 
@@ -150,7 +126,7 @@ class Mybrain_Utilities_Admin
      * Admin footer text
      *
      * A function to add footer text to the settings page of the plugin.
-     * @since	1.2
+     * @since	1.0.2
      * @refer	https://codex.wordpress.org/Function_Reference/get_current_screen
      */
     public function mybrain_utilities_admin_footer_text($default)
@@ -172,7 +148,7 @@ class Mybrain_Utilities_Admin
     /**
      * Admin footer version
      *
-     * @since	1.0
+     * @since	1.0.2
      */
     public function mybrain_utilities_update_footer($default)
     {
