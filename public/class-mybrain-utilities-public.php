@@ -490,13 +490,12 @@ class Mybrain_Utilities_Public
         esc_html_e('OpenStreetMap/Leaflet Shortcode', 'mybrain-utilities');
         echo '</li></ul>';
         echo '</p>';
-
-        if (isset($_GET['show']) && ($_GET['show'] == 'options')) {
-            $options = get_option('mybrain_utilities_options', array());
-            echo '<pre class="hidden">';
-            print_r($options);
-            echo '</pre>';
-        }
+        // if (isset($_GET['show']) && ($_GET['show'] == 'options')) {
+        //     $options = get_option('mybrain_utilities_options', array());
+        //     echo '<pre class="hidden">';
+        //     print_r($options);
+        //     echo '</pre>';
+        // }
     }
 
 
