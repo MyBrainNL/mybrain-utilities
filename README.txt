@@ -2,9 +2,9 @@
 Contributors: @MarkoHoven
 Donate link: https://mybrain.nl/
 Tags: utilities
-Requires at least: 3.0.1
+Requires at least: 5.2
 Requires PHP: 7.0
-Tested up to: 6.7.0
+Tested up to: 6.7
 Stable tag: 1.0.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -108,13 +108,16 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 == Changelog ==
 
 = 1.0.4 =
-* Improvement for is_plugin_active('htaccess-keeper.php') - 26 March 2025
+26 March 2025
+* Improvement for is_plugin_active('htaccess-keeper.php')
 
 = 1.0.3 =
-* Improvements for Wordpress Plugin Review - 30 January 2025
+30 January 2025
+* Improvements for Wordpress Plugin Review
 
 = 1.0.2 =
-* Initial release - 5 December 2024
+5 December 2024
+* Initial release
 
 = 1.0.1 =
 * Merged the HTAccess_Keeper plugin into the MyBrain Utilities Plugin
@@ -126,5 +129,5 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Upgrade Notice ==
 
-= 1.0.2 =
+= 1.0.4 =
 * Latest version. Just install and configure. No other action needed.
