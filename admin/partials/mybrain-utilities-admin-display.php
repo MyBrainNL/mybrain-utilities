@@ -11,7 +11,9 @@
  * @package    Mybrain_Utilities
  * @subpackage Mybrain_Utilities/admin/partials
  */
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if (! defined('ABSPATH')) {
+    exit;
+} // Exit if accessed directly
 
 //20240901
 if (!current_user_can("manage_options")) {
@@ -26,7 +28,8 @@ if (!current_user_can("manage_options")) {
         <a class="nav-tab" href="#tab1" title="About"><?php esc_html_e('About', 'mybrain-utilities'); ?></a>
         <a class="nav-tab" href="#tab2" title="HTAccess_Keeper">HTAccess_Keeper</a>
         <a class="nav-tab" href="#tab3" title="Keep_me_logged_in">Keep_me_logged_in</a>
-        <a class="nav-tab" href="#tab4" title="Map"><?php esc_html_e('Maps', 'mybrain-utilities'); ?></a>
+        <a class="nav-tab" href="#tab4" title="Console_Warning">Console_Warning</a>
+        <a class="nav-tab" href="#tab5" title="Map"><?php esc_html_e('Map', 'mybrain-utilities'); ?></a>
         <a class="nav-tab hidden" href="#tab9" title="Sample Settings">Sample Settings</a>
     </h2>
 <?php

@@ -9,6 +9,7 @@
 .has-large-font-size {
     font-size: larger;
 }
+
 .has-small-font-size {
     font-size: smaller;
 }
@@ -25,10 +26,11 @@ textarea {
     resize: both;
 }
 
-#editor .hidden, .settings_page_mybrain-utilities pre.hidden {
+#editor .hidden {
     display: block;
     background-color: #ffff00;
 }
+
 .tab-body {
     position: relative;
     background: #fff;
@@ -93,6 +95,7 @@ textarea {
     left: auto;
     right: -14px;
 }
+
 .nav-tab-active, .nav-tab-active:focus, .nav-tab-active:focus:active, .nav-tab-active:hover {
     border-top: 2px solid #2271b1;
 }

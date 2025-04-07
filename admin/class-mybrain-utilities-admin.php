@@ -97,8 +97,8 @@ class Mybrain_Utilities_Admin
     {
         add_submenu_page(
             'options-general.php',
-            __('MyBrain Utilities Settings', 'mybrain-utilities'), //'Plugin settings',
-            __('MyBrain Utilities', 'mybrain-utilities'), //'Plugin',
+            'MyBrain Utilities '.__('Settings', 'mybrain-utilities'), //'Plugin settings',
+            'MyBrain Utilities ', //'Plugin',
             'manage_options',
             'mybrain-utilities',
             array($this, 'display_mybrain_utilities_plugin_admin_page')
@@ -137,7 +137,7 @@ class Mybrain_Utilities_Admin
             return $default;
         }
 
-        $default = '<span class="has-small-font-size">'.esc_html__('"MyBrain Utilities" Wordpress Plugin by', 'mybrain-utilities');
+        $default = '<span class="has-small-font-size">"MyBrain Utilities" '.esc_html__('Wordpress Plugin by', 'mybrain-utilities');
         $default .= '&nbsp;<a href="'.esc_url('https://mybrain.nl/en/').'" target="_blank">My Brain</a> - ';
         $default .= esc_html__('Have a nice day!', 'mybrain-utilities').'</span>';
 

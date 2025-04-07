@@ -1,11 +1,11 @@
 === MyBrain Utilities ===
 Contributors: @MarkoHoven
-Donate link: https://mybrain.nl/
-Tags: utilities
+Donate link: https://mybrain.nl/en/
+Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
 Tested up to: 6.7
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -34,15 +34,15 @@ MyBrain Utilities uses the following third-party resources:
 
 WordPress plugin boilerplate generator, WPPB by Enrique Chavez
 License: GPLv2
-Source: https://wppb.me/
+Source: [https://wppb.me/](https://wppb.me/)
 
 OpenStreetMap, by the OpenStreetMap Foundation (OSMF)
 License: Open Data Commons Open Database License (ODbL)
-Source: https://www.openstreetmap.org
+Source: [https://www.openstreetmap.org](https://www.openstreetmap.org)
 
 Leaflet, created by Volodymyr Agafonkin
 License: MIT, BSD 2 clause
-Source: https://leafletjs.com/
+Source: [https://leafletjs.com/](https://leafletjs.com/)
 
 
 == Description ==
@@ -58,6 +58,10 @@ Originally developed because some plugins keep (re)writing to these two files an
 = Keep_me_logged_in =
 Stay logged in longer. WordPress will keep you logged in for 48 hours. If you've clicked the "Remember Me" checkbox at login, you get remembered for 14 days.
 This option keeps your login active longer than the standard Wordpress Login Cookie time-out. You may need to login again after you change the time-out value.
+
+= Console_Warning =
+This plugin adds a warning in the browser console log to any visitor, to only continue if they understand the code and trust the source.
+Disable this option at your own risk.
 
 = Openstreetmap/Leaflet Shortcode =
 Adds a simple OpenStreetMap/Leaflet Shortcode to be used in your content/contact-page.
@@ -103,20 +107,21 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 4. MyBrain Utilities Maps Settings.
 5. Sample Shortcode and Popup-information on Page-Edit screen.
 6. Sample Openstreetmap/Leaflet Map on the website.
+7. Browser Console Warning.
 
 
 == Changelog ==
 
-= 1.0.4 =
-26 March 2025
+= 1.0.5 - 7 April 2025 =
+* Enhancement: Added browser console warning
+
+= 1.0.4 - 26 March 2025 =
 * Improvement for is_plugin_active('htaccess-keeper.php')
 
-= 1.0.3 =
-30 January 2025
+= 1.0.3 - 30 January 2025 =
 * Improvements for Wordpress Plugin Review
 
-= 1.0.2 =
-5 December 2024
+= 1.0.2 - 5 December 2024 =
 * Initial release
 
 = 1.0.1 =
@@ -129,5 +134,5 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Upgrade Notice ==
 
-= 1.0.4 =
+= 1.0.5 =
 * Latest version. Just install and configure. No other action needed.

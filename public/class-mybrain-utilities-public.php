@@ -84,7 +84,6 @@ class Mybrain_Utilities_Public
 
         $options = get_option('mybrain_utilities_options', array());
         if (isset($options['mapenabled']) && ($options['mapenabled'] == 'yes')) {
-
             global $post;
             if ((is_a($post, 'WP_Post') && has_shortcode($post->post_content, 'mbumap'))) {
                 wp_enqueue_style('mbu-leaflet-styles', plugin_dir_url(__FILE__) . 'css/leaflet.css', array(), $this->version, 'all');
@@ -100,12 +99,13 @@ class Mybrain_Utilities_Public
      */
     public function enqueue_scripts()
     {
-
-        wp_enqueue_script('mybrain-utilities', plugin_dir_url(__FILE__) . 'js/mybrain-utilities-public.js', array( 'jquery' ), $this->version, false);
-
         $options = get_option('mybrain_utilities_options', array());
-        if (isset($options['mapenabled']) && ($options['mapenabled'] == 'yes')) {
 
+        if (!(isset($options['warningdisabled']) && ($options['warningdisabled'] == 'yes'))) {
+            wp_enqueue_script('mybrain-utilities', plugin_dir_url(__FILE__) . 'js/mybrain-utilities-public.js', array( 'jquery' ), $this->version, false);
+        }
+
+        if (isset($options['mapenabled']) && ($options['mapenabled'] == 'yes')) {
             global $post;
             if ((is_a($post, 'WP_Post') && has_shortcode($post->post_content, 'mbumap'))) {
                 wp_enqueue_script('mbu-leaflet-scripts', plugin_dir_url(__FILE__) . 'js/leaflet.js', array( 'jquery' ), $this->version, false);
@@ -120,27 +120,28 @@ class Mybrain_Utilities_Public
     /**
      * custom sanitize settings
      */
-    public function mybrain_utilities_sanitize_settings_callback(array $option): array
+    public function mybrain_utilities_sanitize_settings_callback(array $options): array
     {
-        $original_value = $option;
-        foreach ($option as $key => $value) {
+        $original_value = $options;
+        foreach ($options as $key => $value) {
             switch ($key) {
                 case 'this_is_empty':
                     $value = '';
                     break;
                 case 'htaccesskeeperenabled':
                 case 'keeploginenabled':
+                case 'warningdisabled':
                 case 'mapenabled':
                 case 'this_is_toggled':
                     $value = sanitize_text_field($value);
-                    if ($value !== 'no') {
-                        $value = 'yes';
+                    if ($value !== 'yes') {
+                        $value = 'no';
                     }
                     break;
                 case 'this_is_active':
                     $value = sanitize_text_field($value);
-                    if ($value !== 'disabled') {
-                        $value = 'enabled';
+                    if ($value !== 'enabled') {
+                        $value = 'disabled';
                     }
                     break;
                 case 'this_is_text':
@@ -170,9 +171,9 @@ class Mybrain_Utilities_Public
                     }
                     break;
             }
-            $option[$key] = $value;
+            $options[$key] = $value;
         }
-        return apply_filters('mybrain_utilities_sanitize_settings_filter', $option, $original_value);
+        return apply_filters('mybrain_utilities_sanitize_settings_filter', $options, $original_value);
     }
 
 
@@ -225,7 +226,7 @@ class Mybrain_Utilities_Public
         // register a new section in the "mybrain_utilities" page
         add_settings_section(
             'mybrain_utilities_section_htaccess',
-            __('HTAccess Keeper', 'mybrain-utilities'),
+            'HTAccess Keeper',
             array($this, 'mybrain_utilities_section_htaccess_intro'),
             'mybrain_utilities',
             [
@@ -254,12 +255,41 @@ class Mybrain_Utilities_Public
 
         // register a new section in the "mybrain_utilities" page
         add_settings_section(
-            'mybrain_utilities_section_map',
-            __('Maps Shortcode', 'mybrain-utilities'),
-            array($this, 'mybrain_utilities_section_map_intro'),
+            'mybrain_utilities_section_console',
+            __('Console Warning', 'mybrain-utilities'),
+            array($this, 'mybrain_utilities_section_console_intro'),
             'mybrain_utilities',
             [
                 'before_section' => '<div id="tab4" class="%s" style="display:none;">',
+                'after_section' => '</div>',
+                'section_class' => 'tab-body',
+            ]
+        );
+
+        add_settings_field(
+            'warningdisabled',
+            __('Disable Warning', 'mybrain-utilities'),
+            array($this, 'mybrain_utilities_field_toggle'),
+            'mybrain_utilities',
+            'mybrain_utilities_section_console',
+            [
+                'label_for' => 'warningdisabled',
+                'description' => __('Disable the browser console warning', 'mybrain-utilities'),
+                'toggled' => 'yes',
+                'type' => 'yesno', //yesno or onoff
+                'default' => 'no', // unused - a toggle can not have a default
+                'direction' => 'vertical',
+                'class' => '',
+            ]
+        );
+        // register a new section in the "mybrain_utilities" page
+        add_settings_section(
+            'mybrain_utilities_section_map',
+            __('Map Shortcode', 'mybrain-utilities'),
+            array($this, 'mybrain_utilities_section_map_intro'),
+            'mybrain_utilities',
+            [
+                'before_section' => '<div id="tab5" class="%s" style="display:none;">',
                 'after_section' => '</div>',
                 'section_class' => 'tab-body',
             ]
@@ -273,7 +303,7 @@ class Mybrain_Utilities_Public
             'mybrain_utilities_section_map',
             [
                 'label_for' => 'mapenabled',
-                'description' => __('Activate the shortcode [mbumap]', 'mybrain-utilities'),
+                'description' => __('Activate the shortcode', 'mybrain-utilities').' [mbumap]',
                 'toggled' => 'yes',
                 'type' => 'yesno', //yesno or onoff
                 'default' => 'yes', // unused - a toggle can not have a default
@@ -285,7 +315,7 @@ class Mybrain_Utilities_Public
         // register a new section in the "mybrain_utilities" page
         add_settings_section(
             'mybrain_utilities_section_keeplogin',
-            __('Keep My Login', 'mybrain-utilities'),
+            'Keep Me Logged In',
             array($this, 'mybrain_utilities_section_keeplogin_intro'),
             'mybrain_utilities',
             [
@@ -321,15 +351,15 @@ class Mybrain_Utilities_Public
                 'label_for' => 'keeplogintimeout',
                 'description' => __('Select how long you wish to stay logged in.', 'mybrain-utilities'),
                 'options' => [
-                    '86400' => __('1 Day', 'mybrain-utilities'),
-                    '172800' => __('2 Days', 'mybrain-utilities'),
-                    '604800' => __('7 Days', 'mybrain-utilities'),
-                    '1209600' => __('14 Days', 'mybrain-utilities'),
-                    '2592000' => __('30 Days', 'mybrain-utilities'),
-                    '7776000' => __('90 Days', 'mybrain-utilities'),
-                    '15552000' => __('180 Days', 'mybrain-utilities'),
-                    '31556926' => __('365 Days', 'mybrain-utilities'),
-                    '126230400' => __('1461 Days', 'mybrain-utilities'),
+                    '86400' => '1 '.__('Day', 'mybrain-utilities'),
+                    '172800' => '2 '.__('Days', 'mybrain-utilities'),
+                    '604800' => '7 '.__('Days', 'mybrain-utilities'),
+                    '1209600' => '14 '.__('Days', 'mybrain-utilities'),
+                    '2592000' => '30 '.__('Days', 'mybrain-utilities'),
+                    '7776000' => '90 '.__('Days', 'mybrain-utilities'),
+                    '15552000' => '180 '.__('Days', 'mybrain-utilities'),
+                    '31556926' => '365 '.__('Days', 'mybrain-utilities'),
+                    '126230400' => '1461 '.__('Days', 'mybrain-utilities'),
                 ],
                 'default' => '15552000',
                 'class' => '',
@@ -483,18 +513,20 @@ class Mybrain_Utilities_Public
         echo '">';
         esc_html_e('This plugin provides various utilities for Wordpress', 'mybrain-utilities');
         echo ':<ul class="ul-disc"><li>';
-        esc_html_e('HTAccess_Keeper', 'mybrain-utilities');
+        echo 'HTAccess_Keeper';
         echo '</li><li>';
-        esc_html_e('Keep_me_logged_in', 'mybrain-utilities');
+        echo 'Keep_me_logged_in';
         echo '</li><li>';
-        esc_html_e('OpenStreetMap/Leaflet Shortcode', 'mybrain-utilities');
+        echo 'Console_Warning';
+        echo '</li><li>';
+        echo 'OpenStreetMap/Leaflet Shortcode';
         echo '</li></ul>';
         echo '</p>';
         // if (isset($_GET['show']) && ($_GET['show'] == 'options')) {
-        //     $options = get_option('mybrain_utilities_options', array());
-        //     echo '<pre class="hidden">';
-        //     print_r($options);
-        //     echo '</pre>';
+            // $options = get_option('mybrain_utilities_options', array());
+            // echo '<pre class="">';
+            // print_r($options);
+            // echo '</pre>';
         // }
     }
 
@@ -517,13 +549,31 @@ class Mybrain_Utilities_Public
             esc_html_e('WARNING: Old version of "HTAccess Keeper" detected - plugin already active!', 'mybrain-utilities');
             echo '<br/>';
             // esc_html_e('Please <a href="/wp-admin/plugins.php">deactivate</a> the old stand-alone plugin.', 'mybrain-utilities');
-            esc_html_e('Please ', 'mybrain-utilities');
-            echo '<a href="/wp-admin/plugins.php">';
+            esc_html_e('Please', 'mybrain-utilities');
+            echo ', <a href="/wp-admin/plugins.php">';
             esc_html_e('deactivate', 'mybrain-utilities');
-            echo '</a>';
-            esc_html_e(' the old stand-alone plugin.', 'mybrain-utilities');
-            echo '</p>';
+            echo '</a> ';
+            esc_html_e('the old stand-alone plugin', 'mybrain-utilities');
+            echo '.</p>';
         }
+    }
+
+
+    public function mybrain_utilities_section_console_intro($args)
+    {
+        echo '<div class="button-right-top">';
+        submit_button();
+        echo '</div>';
+        echo '<p id="';
+        echo esc_attr($args['id']);
+        echo '"><b>';
+        esc_html_e('Disable the browser console warning', 'mybrain-utilities');
+        echo ':</b><br/>';
+        esc_html_e('This plugin adds a warning in the browser console log to any visitor, to only continue if they understand the code and trust the source.', 'mybrain-utilities');
+        echo '<br/>';
+        esc_html_e('Disable this option at your own risk.', 'mybrain-utilities');
+        echo '</p>';
+
     }
 
 
@@ -537,17 +587,17 @@ class Mybrain_Utilities_Public
         echo '"><b>';
         esc_html_e('Add a simple OpenStreetMap/Leaflet Shortcode', 'mybrain-utilities');
         echo ':</b><br/>';
-        echo '[mbumap center="52.145634,5.04855" coords="52.145634,5.04855" zoom="15" class="myclass"]';
-        echo '<br/>* ';
-        esc_html_e('center = map center', 'mybrain-utilities');
-        echo '<br/>* ';
-        esc_html_e('coords = places a marker', 'mybrain-utilities');
+        echo '[mbumap center="52.145634,5.04855" coords="52.145634,5.04855" zoom="15" class="myclasses"]';
+        echo '<br/>* center = ';
+        esc_html_e('map center', 'mybrain-utilities');
+        echo '<br/>* coords = ';
+        esc_html_e('places a marker', 'mybrain-utilities');
         echo '<br/><br/><b>';
         esc_html_e('How to add a marker popup?', 'mybrain-utilities');
         echo '</b><br/>* ';
-        esc_html_e('Use a Paragraph Block with Extra CSS-class(es) "mbumap-popup" to add a balloon with that content to the map.', 'mybrain-utilities');
+        esc_html_e('Use a Paragraph Block with Extra CSS-class "mbumap-popup" to add a balloon with that content to the map.', 'mybrain-utilities');
         echo '<br/>* ';
-        esc_html_e('Use CSS-class(es) "mbumap-popup hidden" to have it hidden in the front-end.', 'mybrain-utilities');
+        esc_html_e('Use CSS-classes "mbumap-popup hidden" to have the paragraph hidden in the front-end.', 'mybrain-utilities');
         echo '<br/>';
         echo '<br/>';
         echo '</p>';
@@ -562,9 +612,9 @@ class Mybrain_Utilities_Public
         echo '</div>';
         echo '<p id="';
         echo esc_attr($args['id']);
-        echo '">';
+        echo '"><b>';
         esc_html_e('Stay logged in longer.', 'mybrain-utilities');
-        echo '<br/>';
+        echo '</b><br/>';
         esc_html_e('You may need to login again after you change the time-out value.', 'mybrain-utilities');
         echo '<br/>';
         esc_html_e('WordPress will keep you logged in for 48 hours. If you\'ve clicked the "Remember Me" checkbox at login, you get remembered for 14 days.', 'mybrain-utilities');
@@ -581,7 +631,7 @@ class Mybrain_Utilities_Public
         echo '<p id="';
         echo esc_attr($args['id']);
         echo '">';
-        esc_html_e('Settings below are not in use, and for code demonstration purposes only.', 'mybrain-utilities');
+        echo 'Settings below are not in use, and for code demonstration purposes only.';
         echo '</p>';
 
     }
@@ -897,7 +947,6 @@ class Mybrain_Utilities_Public
         $options = get_option('mybrain_utilities_options', array());
         if (isset($options['keeploginenabled']) && ($options['keeploginenabled'] == 'yes')) {
             if (isset($options['keeplogintimeout']) && is_numeric($options['keeplogintimeout']) && ($options['keeplogintimeout'] > 0)) {
-                // return 31556926; // 1 year in seconds
                 $expirein = $options['keeplogintimeout'];
             }
         }
@@ -912,7 +961,7 @@ class Mybrain_Utilities_Public
         $atts = shortcode_atts(
             array(
                 'center' => '52.145634,5.04855',
-                'coords' => '', //52.145634,5.04855
+                'coords' => '',
                 'zoom' => '15',
                 'class' => 'mbu-map',
             ),

@@ -4,9 +4,27 @@
     width: 100%;
     height: 180px;
 }
-#mbu-map a { text-decoration: none; }
-.mbu-map { height: 240px !important; }
-.mbu-map-double { height: 480px !important; }
-.leaflet-container { font-size: 10px; }
-.leaflet-popup, .leaflet-popup-content { font-size: 12px; }
-.mbumap-popup.hidden { display: none; }
+
+#mbu-map a {
+    text-decoration: none;
+}
+
+.mbu-map {
+    height: 240px !important;
+}
+
+.mbu-map-double {
+    height: 480px !important;
+}
+
+.leaflet-container {
+    font-size: 10px;
+}
+
+.leaflet-popup, .leaflet-popup-content {
+    font-size: 12px;
+}
+
+.mbumap-popup.hidden {
+    display: none;
+}
