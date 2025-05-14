@@ -4,8 +4,8 @@ Donate link: https://mybrain.nl/en/
 Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
-Tested up to: 6.7
-Stable tag: 1.0.5
+Tested up to: 6.8
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -112,27 +112,8 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 1.0.5 - 7 April 2025 =
-* Enhancement: Added browser console warning
-
-= 1.0.4 - 26 March 2025 =
-* Improvement for is_plugin_active('htaccess-keeper.php')
-
-= 1.0.3 - 30 January 2025 =
-* Improvements for Wordpress Plugin Review
-
-= 1.0.2 - 5 December 2024 =
-* Initial release
-
-= 1.0.1 =
-* Merged the HTAccess_Keeper plugin into the MyBrain Utilities Plugin
-
-= 1.0.0 =
-* Improved keep_me_logged_in_for_1_year
-* Added OpenStreetMap/Leaflet Map
+= 1.0.6 - 14 May 2025 =
+* Tested Up To WordPress v6.8
 
 
 == Upgrade Notice ==
-
-= 1.0.5 =
-* Latest version. Just install and configure. No other action needed.
