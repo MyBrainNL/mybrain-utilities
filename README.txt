@@ -5,7 +5,7 @@ Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
 Tested up to: 6.8
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 

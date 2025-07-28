@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBrain Utilities\n"
 "Report-Msgid-Bugs-To: http://mybrain.nl/\n"
-"POT-Creation-Date: 2025-04-07 12:04+0200\n"
-"PO-Revision-Date: 2025-04-07 12:07+0200\n"
+"POT-Creation-Date: 2025-07-28 14:13+0200\n"
+"PO-Revision-Date: 2025-07-28 14:28+0200\n"
 "Last-Translator: Marko Hoven - My Brain <support@mybrain.nl>\n"
 "Language-Team: My Brain <support@mybrain.nl>\n"
 "Language: nl_NL\n"
@@ -217,7 +217,7 @@ msgstr "Deze plugin biedt verschillende hulpprogramma's voor Wordpress"
 #: public/class-mybrain-utilities-public.php:542
 msgid "Checks, backs up and restores your .htaccess and wp-config.php files."
 msgstr ""
-"Controleert, maakt back-ups en herstelt je .htaccess- en wp-config.php-"
+"Controleert, maakt back-ups en herstelt je .htaccess en wp-config.php "
 "bestanden."
 
 #: public/class-mybrain-utilities-public.php:544
@@ -252,7 +252,7 @@ msgid ""
 "This plugin adds a warning in the browser console log to any visitor, to "
 "only continue if they understand the code and trust the source."
 msgstr ""
-"Deze plugin voegt een waarschuwing toe in de browser console log naar elke "
+"Deze plugin voegt een waarschuwing toe in de browserconsole log naar elke "
 "bezoeker, om alleen verder te gaan als ze de code begrijpen en de bron "
 "vertrouwen."
 
@@ -266,7 +266,7 @@ msgstr "Een eenvoudige OpenStreetMap/Leaflet Shortcode toevoegen"
 
 #: public/class-mybrain-utilities-public.php:592
 msgid "map center"
-msgstr "centrum van de kaart"
+msgstr "midden van de kaart"
 
 #: public/class-mybrain-utilities-public.php:594
 msgid "places a marker"
@@ -289,8 +289,8 @@ msgid ""
 "Use CSS-classes \"mbumap-popup hidden\" to have the paragraph hidden in the "
 "front-end."
 msgstr ""
-"Gebruik CSS-classes \"mbumap-popup hidden\" om het te verbergen in de front-"
-"end."
+"Gebruik CSS-classes \"mbumap-popup hidden\" om de paragraaf te verbergen in "
+"de front-end."
 
 #: public/class-mybrain-utilities-public.php:616
 msgid "Stay logged in longer."
@@ -299,7 +299,7 @@ msgstr "Langer ingelogd blijven."
 #: public/class-mybrain-utilities-public.php:618
 msgid "You may need to login again after you change the time-out value."
 msgstr ""
-"Mogelijk moet u opnieuw inloggen nadat u de time-outwaarde hebt gewijzigd."
+"Mogelijk moet je opnieuw inloggen nadat je de time-outwaarde hebt gewijzigd."
 
 #: public/class-mybrain-utilities-public.php:620
 msgid ""
