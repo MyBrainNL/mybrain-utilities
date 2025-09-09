@@ -523,10 +523,10 @@ class Mybrain_Utilities_Public
         echo '</li></ul>';
         echo '</p>';
         // if (isset($_GET['show']) && ($_GET['show'] == 'options')) {
-            // $options = get_option('mybrain_utilities_options', array());
-            // echo '<pre class="">';
-            // print_r($options);
-            // echo '</pre>';
+        // $options = get_option('mybrain_utilities_options', array());
+        // echo '<pre class="">';
+        // print_r($options);
+        // echo '</pre>';
         // }
     }
 
@@ -968,7 +968,8 @@ class Mybrain_Utilities_Public
             $atts,
             'mbu_map'
         );
-        return '<div id="mbu-map" center="'.$atts['center'].'" coords="'.$atts['coords'].'" zoom="'.$atts['zoom'].'" class="'.$atts['class'].'"></div>';
+        //20250909 - sanitize!
+        return '<div id="mbu-map" center="'.esc_attr($atts['center']).'" coords="'.esc_attr($atts['coords']).'" zoom="'.esc_attr($atts['zoom']).'" class="'.esc_attr($atts['class']).'"></div>';
     }
 
 }
