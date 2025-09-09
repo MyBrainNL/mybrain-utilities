@@ -5,7 +5,7 @@ Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
 Tested up to: 6.8
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -111,6 +111,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 
 == Changelog ==
+
+= 1.0.8 - 9 September 2025 =
+* Updated Plugin URI
 
 = 1.0.6 - 14 May 2025 =
 * Tested Up To WordPress v6.8
