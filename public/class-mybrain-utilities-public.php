@@ -71,6 +71,11 @@ class Mybrain_Utilities_Public
             //20240904 - keeplogin!
             add_filter('auth_cookie_expiration', array($this, 'mybrain_utilities_keep_me_logged_in_for_1_year'));
         }
+        if (isset($options['cleanhead']) && ($options['cleanhead'] == 'yes')) {
+            //20251016 - cleanhead!
+            add_action('after_setup_theme', array($this, 'mybrain_utilities_run_cleanhead'), 1);
+        }
+
     }
 
 
@@ -131,6 +136,7 @@ class Mybrain_Utilities_Public
                 case 'htaccesskeeperenabled':
                 case 'keeploginenabled':
                 case 'warningdisabled':
+                case 'cleanhead':
                 case 'mapenabled':
                 case 'this_is_toggled':
                     $value = sanitize_text_field($value);
@@ -282,6 +288,37 @@ class Mybrain_Utilities_Public
                 'class' => '',
             ]
         );
+
+        // register a new section in the "mybrain_utilities" page
+        add_settings_section(
+            'mybrain_utilities_section_cleanhead',
+            'Clean Head',
+            array($this, 'mybrain_utilities_section_cleanhead_intro'),
+            'mybrain_utilities',
+            [
+                'before_section' => '<div id="tab6" class="%s" style="display:none;">',
+                'after_section' => '</div>',
+                'section_class' => 'tab-body',
+            ]
+        );
+
+        add_settings_field(
+            'cleanhead',
+            __('Clean HEAD', 'mybrain-utilities'),
+            array($this, 'mybrain_utilities_field_toggle'),
+            'mybrain_utilities',
+            'mybrain_utilities_section_cleanhead',
+            [
+                'label_for' => 'cleanhead',
+                'description' => __('Remove the wp_head actions', 'mybrain-utilities'),
+                'toggled' => 'yes',
+                'type' => 'yesno', //yesno or onoff
+                'default' => 'yes', // unused - a toggle can not have a default
+                'direction' => 'vertical',
+                'class' => '',
+            ]
+        );
+
         // register a new section in the "mybrain_utilities" page
         add_settings_section(
             'mybrain_utilities_section_map',
@@ -519,6 +556,8 @@ class Mybrain_Utilities_Public
         echo '</li><li>';
         echo 'Console_Warning';
         echo '</li><li>';
+        echo 'Clean_Head';
+        echo '</li><li>';
         echo 'OpenStreetMap/Leaflet Shortcode';
         echo '</li></ul>';
         echo '</p>';
@@ -573,7 +612,36 @@ class Mybrain_Utilities_Public
         echo '<br/>';
         esc_html_e('Disable this option at your own risk.', 'mybrain-utilities');
         echo '</p>';
+    }
 
+    public function mybrain_utilities_section_cleanhead_intro($args)
+    {
+        echo '<div class="button-right-top">';
+        submit_button();
+        echo '</div>';
+        echo '<p id="';
+        echo esc_attr($args['id']);
+        echo '"><b>';
+        esc_html_e('Cleanup some default Wordpress HEAD entries', 'mybrain-utilities');
+        echo '.</b><br/>';
+        esc_html_e('Keeps your HTML a little cleaner; remove the links to the rss-feeds and other lines, like', 'mybrain-utilities');
+        echo ':<br/><pre>';
+        echo "remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );\n";
+        echo "remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );\n";
+        echo "remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );\n";
+        //echo "remove_action( 'wp_head', 'rel_canonical' );\n";
+        echo "remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head' );\n";
+        echo "remove_action( 'wp_head', 'feed_links_extra', 3 );\n";
+        echo "remove_action( 'wp_head', 'feed_links', 2 );\n";
+        echo "remove_action( 'wp_head', 'rsd_link' );\n";
+        echo "remove_action( 'wp_head', 'wlwmanifest_link' );\n";
+        echo "remove_action( 'wp_head', 'index_rel_link' );\n";
+        echo "remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );\n";
+        echo "remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );\n";
+        echo "remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );\n";
+        echo "remove_action( 'wp_head', 'wp_generator' );\n";
+        echo "add_filter('wp_statistics_html_comment', '__return_false');\n";
+        echo '</pre></p>';
     }
 
 
@@ -601,7 +669,6 @@ class Mybrain_Utilities_Public
         echo '<br/>';
         echo '<br/>';
         echo '</p>';
-
     }
 
 
@@ -619,7 +686,6 @@ class Mybrain_Utilities_Public
         echo '<br/>';
         esc_html_e('WordPress will keep you logged in for 48 hours. If you\'ve clicked the "Remember Me" checkbox at login, you get remembered for 14 days.', 'mybrain-utilities');
         echo '</p>';
-
     }
 
 
@@ -633,7 +699,6 @@ class Mybrain_Utilities_Public
         echo '">';
         echo 'Settings below are not in use, and for code demonstration purposes only.';
         echo '</p>';
-
     }
 
 
@@ -952,6 +1017,30 @@ class Mybrain_Utilities_Public
         }
         return $expirein;
     }
+
+
+
+
+    //20251016 - cleanhead!
+    public function mybrain_utilities_run_cleanhead($args)
+    {
+        remove_action('wp_head', 'rest_output_link_wp_head', 10);
+        remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+        remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+        // remove_action('wp_head', 'rel_canonical');
+        remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
+        remove_action('wp_head', 'feed_links_extra', 3);
+        remove_action('wp_head', 'feed_links', 2);
+        remove_action('wp_head', 'rsd_link');
+        remove_action('wp_head', 'wlwmanifest_link');
+        remove_action('wp_head', 'index_rel_link');
+        remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+        remove_action('wp_head', 'start_post_rel_link', 10, 0);
+        remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+        remove_action('wp_head', 'wp_generator');
+        add_filter('wp_statistics_html_comment', '__return_false');
+    }
+
 
 
 

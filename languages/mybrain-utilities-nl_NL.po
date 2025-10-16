@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyBrain Utilities\n"
 "Report-Msgid-Bugs-To: http://mybrain.nl/\n"
-"POT-Creation-Date: 2025-07-28 14:13+0200\n"
-"PO-Revision-Date: 2025-07-28 14:28+0200\n"
+"POT-Creation-Date: 2025-10-16 11:38+0200\n"
+"PO-Revision-Date: 2025-10-16 11:39+0200\n"
 "Last-Translator: Marko Hoven - My Brain <support@mybrain.nl>\n"
 "Language-Team: My Brain <support@mybrain.nl>\n"
 "Language: nl_NL\n"
@@ -46,23 +46,23 @@ msgid "You do not have sufficient permissions to access this page."
 msgstr "Je hebt niet voldoende rechten om deze pagina te bekijken."
 
 #: admin/partials/mybrain-utilities-admin-display.php:28
-#: public/class-mybrain-utilities-public.php:200
+#: public/class-mybrain-utilities-public.php:206
 msgid "About"
 msgstr "Over"
 
-#: admin/partials/mybrain-utilities-admin-display.php:32
+#: admin/partials/mybrain-utilities-admin-display.php:33
 msgid "Map"
 msgstr "Kaart"
 
-#: admin/partials/mybrain-utilities-admin-display.php:39
+#: admin/partials/mybrain-utilities-admin-display.php:40
 msgid "Save Settings"
 msgstr "Instellingen Opslaan"
 
-#: public/class-mybrain-utilities-public.php:241
+#: public/class-mybrain-utilities-public.php:247
 msgid "Enable Protection"
 msgstr "Bescherming inschakelen"
 
-#: public/class-mybrain-utilities-public.php:247
+#: public/class-mybrain-utilities-public.php:253
 msgid ""
 "An e-mail will be sent to the Administration Email Address, whenever a "
 "damaged file has been restored."
@@ -70,36 +70,44 @@ msgstr ""
 "Er wordt een e-mail gestuurd naar het e-mailadres van de beheerder wanneer "
 "een beschadigd bestand is hersteld."
 
-#: public/class-mybrain-utilities-public.php:259
+#: public/class-mybrain-utilities-public.php:265
 msgid "Console Warning"
 msgstr "Console Waarschuwing"
 
-#: public/class-mybrain-utilities-public.php:271
+#: public/class-mybrain-utilities-public.php:277
 msgid "Disable Warning"
 msgstr "Waarschuwing uitschakelen"
 
-#: public/class-mybrain-utilities-public.php:277
-#: public/class-mybrain-utilities-public.php:570
+#: public/class-mybrain-utilities-public.php:283
+#: public/class-mybrain-utilities-public.php:609
 msgid "Disable the browser console warning"
 msgstr "De waarschuwing in de browserconsole uitschakelen"
 
-#: public/class-mybrain-utilities-public.php:288
+#: public/class-mybrain-utilities-public.php:307
+msgid "Clean HEAD"
+msgstr "HEAD opschonen"
+
+#: public/class-mybrain-utilities-public.php:313
+msgid "Remove the wp_head actions"
+msgstr "Verwijder de wp_head acties"
+
+#: public/class-mybrain-utilities-public.php:325
 msgid "Map Shortcode"
 msgstr "Kaart Shortcode"
 
-#: public/class-mybrain-utilities-public.php:300
+#: public/class-mybrain-utilities-public.php:337
 msgid "Enable Shortcode"
 msgstr "Shortcode inschakelen"
 
-#: public/class-mybrain-utilities-public.php:306
+#: public/class-mybrain-utilities-public.php:343
 msgid "Activate the shortcode"
 msgstr "Activeer de shortcode"
 
-#: public/class-mybrain-utilities-public.php:330
+#: public/class-mybrain-utilities-public.php:367
 msgid "Enable Keep_me_logged_in"
 msgstr "Keep_me_logged_in inschakelen"
 
-#: public/class-mybrain-utilities-public.php:336
+#: public/class-mybrain-utilities-public.php:373
 msgid ""
 "Keep your login active longer than the standard Wordpress Login Cookie time-"
 "out."
@@ -107,120 +115,120 @@ msgstr ""
 "Houd je login langer actief dan de standaard time-out voor Wordpress Login "
 "Cookie."
 
-#: public/class-mybrain-utilities-public.php:346
+#: public/class-mybrain-utilities-public.php:383
 msgid "Time-out"
 msgstr "Time-out"
 
-#: public/class-mybrain-utilities-public.php:352
+#: public/class-mybrain-utilities-public.php:389
 msgid "Select how long you wish to stay logged in."
 msgstr "Selecteer hoe lang je ingelogd wilt blijven."
 
-#: public/class-mybrain-utilities-public.php:354
+#: public/class-mybrain-utilities-public.php:391
 msgid "Day"
 msgstr "Dag"
 
-#: public/class-mybrain-utilities-public.php:355
-#: public/class-mybrain-utilities-public.php:356
-#: public/class-mybrain-utilities-public.php:357
-#: public/class-mybrain-utilities-public.php:358
-#: public/class-mybrain-utilities-public.php:359
-#: public/class-mybrain-utilities-public.php:360
-#: public/class-mybrain-utilities-public.php:361
-#: public/class-mybrain-utilities-public.php:362
+#: public/class-mybrain-utilities-public.php:392
+#: public/class-mybrain-utilities-public.php:393
+#: public/class-mybrain-utilities-public.php:394
+#: public/class-mybrain-utilities-public.php:395
+#: public/class-mybrain-utilities-public.php:396
+#: public/class-mybrain-utilities-public.php:397
+#: public/class-mybrain-utilities-public.php:398
+#: public/class-mybrain-utilities-public.php:399
 msgid "Days"
 msgstr "Dagen"
 
-#: public/class-mybrain-utilities-public.php:372
+#: public/class-mybrain-utilities-public.php:409
 msgid "Unused Sample Settings"
 msgstr "Ongebruikte voorbeeldinstellingen"
 
-#: public/class-mybrain-utilities-public.php:384
+#: public/class-mybrain-utilities-public.php:421
 msgid "Toggle option"
 msgstr "Optie om te schakelen"
 
-#: public/class-mybrain-utilities-public.php:390
+#: public/class-mybrain-utilities-public.php:427
 msgid "Generic toggle"
 msgstr "Algemene schakeloptie"
 
-#: public/class-mybrain-utilities-public.php:401
+#: public/class-mybrain-utilities-public.php:438
 msgid "Combobox enabled option"
 msgstr "Combobox ingeschakeld optie"
 
-#: public/class-mybrain-utilities-public.php:407
+#: public/class-mybrain-utilities-public.php:444
 msgid "Enabled/disabled selectbox"
 msgstr "Ingeschakeld/uitgeschakeld selectievakje"
 
-#: public/class-mybrain-utilities-public.php:415
-#: public/class-mybrain-utilities-public.php:430
+#: public/class-mybrain-utilities-public.php:452
+#: public/class-mybrain-utilities-public.php:467
 msgid "Text option"
 msgstr "Tekst optie"
 
-#: public/class-mybrain-utilities-public.php:421
+#: public/class-mybrain-utilities-public.php:458
 msgid "Generic text field"
 msgstr "Algemeen tekstveld"
 
-#: public/class-mybrain-utilities-public.php:423
-#: public/class-mybrain-utilities-public.php:438
+#: public/class-mybrain-utilities-public.php:460
+#: public/class-mybrain-utilities-public.php:475
 msgid "Type your text here"
 msgstr "Typ je tekst hier"
 
-#: public/class-mybrain-utilities-public.php:436
+#: public/class-mybrain-utilities-public.php:473
 msgid "Generic textarea field"
 msgstr "Algemeen tekstveld"
 
-#: public/class-mybrain-utilities-public.php:445
+#: public/class-mybrain-utilities-public.php:482
 msgid "Selectbox option"
 msgstr "Keuze optie"
 
-#: public/class-mybrain-utilities-public.php:451
+#: public/class-mybrain-utilities-public.php:488
 msgid "Generic selectbox"
 msgstr "Algemeen selectievakje"
 
-#: public/class-mybrain-utilities-public.php:453
-#: public/class-mybrain-utilities-public.php:472
-#: public/class-mybrain-utilities-public.php:492
+#: public/class-mybrain-utilities-public.php:490
+#: public/class-mybrain-utilities-public.php:509
+#: public/class-mybrain-utilities-public.php:529
 msgid "Option 1"
 msgstr "Optie 1"
 
-#: public/class-mybrain-utilities-public.php:454
-#: public/class-mybrain-utilities-public.php:473
-#: public/class-mybrain-utilities-public.php:493
+#: public/class-mybrain-utilities-public.php:491
+#: public/class-mybrain-utilities-public.php:510
+#: public/class-mybrain-utilities-public.php:530
 msgid "Option 2"
 msgstr "Optie 2"
 
-#: public/class-mybrain-utilities-public.php:455
-#: public/class-mybrain-utilities-public.php:474
-#: public/class-mybrain-utilities-public.php:494
+#: public/class-mybrain-utilities-public.php:492
+#: public/class-mybrain-utilities-public.php:511
+#: public/class-mybrain-utilities-public.php:531
 msgid "Option 3"
 msgstr "Optie 3"
 
-#: public/class-mybrain-utilities-public.php:464
+#: public/class-mybrain-utilities-public.php:501
 msgid "Checkbox options"
 msgstr "Selectievak opties"
 
-#: public/class-mybrain-utilities-public.php:470
+#: public/class-mybrain-utilities-public.php:507
 msgid "Generic checkboxes"
 msgstr "Algemene selectievakjes"
 
-#: public/class-mybrain-utilities-public.php:484
+#: public/class-mybrain-utilities-public.php:521
 msgid "Radiobutton options"
 msgstr "Opties voor radioknoppen"
 
-#: public/class-mybrain-utilities-public.php:490
+#: public/class-mybrain-utilities-public.php:527
 msgid "Generic radiobuttons"
 msgstr "Algemene radioknoppen"
 
-#: public/class-mybrain-utilities-public.php:514
+#: public/class-mybrain-utilities-public.php:551
 msgid "This plugin provides various utilities for Wordpress"
 msgstr "Deze plugin biedt verschillende hulpprogramma's voor Wordpress"
 
-#: public/class-mybrain-utilities-public.php:542
+#: public/class-mybrain-utilities-public.php:581
 msgid "Checks, backs up and restores your .htaccess and wp-config.php files."
 msgstr ""
 "Controleert, maakt back-ups en herstelt je .htaccess en wp-config.php "
 "bestanden."
 
-#: public/class-mybrain-utilities-public.php:544
+#: public/class-mybrain-utilities-public.php:583
 msgid ""
 "Makes a backup when files are modified and restores when a 0 bytes file has "
 "been detected."
@@ -228,26 +236,26 @@ msgstr ""
 "Maakt een back-up wanneer bestanden worden gewijzigd en herstelt wanneer een "
 "bestand van 0 bytes is gedetecteerd."
 
-#: public/class-mybrain-utilities-public.php:549
+#: public/class-mybrain-utilities-public.php:588
 msgid ""
 "WARNING: Old version of \"HTAccess Keeper\" detected - plugin already active!"
 msgstr ""
 "WAARSCHUWING: Oude versie van \"HTAccess Keeper\" gedetecteerd - plugin al "
 "actief!"
 
-#: public/class-mybrain-utilities-public.php:552
+#: public/class-mybrain-utilities-public.php:591
 msgid "Please"
 msgstr "SVP"
 
-#: public/class-mybrain-utilities-public.php:554
+#: public/class-mybrain-utilities-public.php:593
 msgid "deactivate"
 msgstr "deactiveer"
 
-#: public/class-mybrain-utilities-public.php:556
+#: public/class-mybrain-utilities-public.php:595
 msgid "the old stand-alone plugin"
 msgstr "de oude stand-alone plugin"
 
-#: public/class-mybrain-utilities-public.php:572
+#: public/class-mybrain-utilities-public.php:611
 msgid ""
 "This plugin adds a warning in the browser console log to any visitor, to "
 "only continue if they understand the code and trust the source."
@@ -256,27 +264,39 @@ msgstr ""
 "bezoeker, om alleen verder te gaan als ze de code begrijpen en de bron "
 "vertrouwen."
 
-#: public/class-mybrain-utilities-public.php:574
+#: public/class-mybrain-utilities-public.php:613
 msgid "Disable this option at your own risk."
 msgstr "Schakel deze optie op eigen risico uit."
 
-#: public/class-mybrain-utilities-public.php:588
+#: public/class-mybrain-utilities-public.php:625
+msgid "Cleanup some default Wordpress HEAD entries"
+msgstr "Opschonen van enkele standaard Wordpress HEAD vermeldingen"
+
+#: public/class-mybrain-utilities-public.php:627
+msgid ""
+"Keeps your HTML a little cleaner; remove the links to the rss-feeds and "
+"other lines, like"
+msgstr ""
+"Houdt je HTML een beetje schoner; verwijder de links naar de rss-feeds en "
+"andere regels, zoals"
+
+#: public/class-mybrain-utilities-public.php:656
 msgid "Add a simple OpenStreetMap/Leaflet Shortcode"
 msgstr "Een eenvoudige OpenStreetMap/Leaflet Shortcode toevoegen"
 
-#: public/class-mybrain-utilities-public.php:592
+#: public/class-mybrain-utilities-public.php:660
 msgid "map center"
 msgstr "midden van de kaart"
 
-#: public/class-mybrain-utilities-public.php:594
+#: public/class-mybrain-utilities-public.php:662
 msgid "places a marker"
 msgstr "plaatst een marker"
 
-#: public/class-mybrain-utilities-public.php:596
+#: public/class-mybrain-utilities-public.php:664
 msgid "How to add a marker popup?"
 msgstr "Hoe voeg ik een popup-ballon toe?"
 
-#: public/class-mybrain-utilities-public.php:598
+#: public/class-mybrain-utilities-public.php:666
 msgid ""
 "Use a Paragraph Block with Extra CSS-class \"mbumap-popup\" to add a balloon "
 "with that content to the map."
@@ -284,7 +304,7 @@ msgstr ""
 "Gebruik een Paragraph Block met Extra CSS-class \"mbumap-popup\" om een "
 "popup-ballon met die inhoud toe te voegen aan de kaart."
 
-#: public/class-mybrain-utilities-public.php:600
+#: public/class-mybrain-utilities-public.php:668
 msgid ""
 "Use CSS-classes \"mbumap-popup hidden\" to have the paragraph hidden in the "
 "front-end."
@@ -292,16 +312,16 @@ msgstr ""
 "Gebruik CSS-classes \"mbumap-popup hidden\" om de paragraaf te verbergen in "
 "de front-end."
 
-#: public/class-mybrain-utilities-public.php:616
+#: public/class-mybrain-utilities-public.php:683
 msgid "Stay logged in longer."
 msgstr "Langer ingelogd blijven."
 
-#: public/class-mybrain-utilities-public.php:618
+#: public/class-mybrain-utilities-public.php:685
 msgid "You may need to login again after you change the time-out value."
 msgstr ""
 "Mogelijk moet je opnieuw inloggen nadat je de time-outwaarde hebt gewijzigd."
 
-#: public/class-mybrain-utilities-public.php:620
+#: public/class-mybrain-utilities-public.php:687
 msgid ""
 "WordPress will keep you logged in for 48 hours. If you've clicked the "
 "\"Remember Me\" checkbox at login, you get remembered for 14 days."
@@ -309,11 +329,11 @@ msgstr ""
 "WordPress houdt je 48 uur ingelogd. Als je bij het inloggen op het "
 "selectievakje \"Onthoud mij\" hebt geklikt, word je 14 dagen lang onthouden."
 
-#: public/class-mybrain-utilities-public.php:660
+#: public/class-mybrain-utilities-public.php:725
 msgid "enabled"
 msgstr "ingeschakeld"
 
-#: public/class-mybrain-utilities-public.php:665
+#: public/class-mybrain-utilities-public.php:730
 msgid "disabled"
 msgstr "uitgeschakeld"
 

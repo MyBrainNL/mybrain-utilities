@@ -5,7 +5,7 @@ Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
 Tested up to: 6.8
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -63,6 +63,10 @@ This option keeps your login active longer than the standard Wordpress Login Coo
 This plugin adds a warning in the browser console log to any visitor, to only continue if they understand the code and trust the source.
 Disable this option at your own risk.
 
+= Clean_Head =
+Option to cleanup some default Wordpress HEAD entries.
+Keeps your HTML a little cleaner; remove the links to the rss-feeds and other lines.
+
 = Openstreetmap/Leaflet Shortcode =
 Adds a simple OpenStreetMap/Leaflet Shortcode to be used in your content/contact-page.
 Inludes a standard marker and optional information popup.
@@ -111,6 +115,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 
 == Changelog ==
+
+= 1.1.1 - 16 October 2025 =
+* Added new option to cleanup default Wordpress HTML HEAD entries
 
 = 1.1.0 - 9 September 2025 =
 * Fixed Cross-site Scripting Vulnerability
