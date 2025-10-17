@@ -5,7 +5,7 @@ Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
 Tested up to: 6.8
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -115,6 +115,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 
 == Changelog ==
+
+= 1.1.2 - 17 October 2025 =
+* Fixed Uncaught TypeError
 
 = 1.1.1 - 16 October 2025 =
 * Added new option to cleanup default Wordpress HTML HEAD entries

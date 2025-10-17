@@ -767,7 +767,8 @@ class Mybrain_Utilities_Public
             echo '<input type="checkbox" id="'.esc_attr($args['label_for']).'"';
             echo ' value="'.esc_html($value).'" name="mybrain_utilities_options[';
             echo esc_attr($args['label_for']).'][]" ';
-            echo esc_html(isset($options[ $args['label_for'] ]) ? (in_array($value, $options[ $args['label_for'] ], false) ? checked(true) : ('')) : (isset($args['default']) ? (checked($args['default'], $value, false)) : ('')));
+            //20251017 - Fatal error: Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given
+            echo esc_html(isset($options[ $args['label_for'] ]) ? (checked($value, $options[ $args['label_for'] ], false) ? checked(true) : '') : (isset($args['default']) ? (checked($args['default'], $value, false)) : ''));
             echo '> ';
             echo esc_html($description);
             if ($args['direction'] == 'horizontal') {
