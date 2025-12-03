@@ -4,8 +4,8 @@ Donate link: https://mybrain.nl/en/
 Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
-Tested up to: 6.8
-Stable tag: 1.1.2
+Tested up to: 6.9
+Stable tag: 1.1.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -115,6 +115,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 
 == Changelog ==
+
+= 1.1.3 - 3 December 2025 =
+* Tested Up To WordPress v6.9
 
 = 1.1.2 - 17 October 2025 =
 * Fixed Uncaught TypeError

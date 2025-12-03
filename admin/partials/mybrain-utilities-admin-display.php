@@ -17,7 +17,7 @@ if (! defined('ABSPATH')) {
 
 //20240901
 if (!current_user_can("manage_options")) {
-    wp_die(esc_html_e('You do not have sufficient permissions to access this page.', 'mybrain-utilities'));
+    wp_die(esc_html__('You do not have sufficient permissions to access this page.', 'mybrain-utilities'));
 }
 // TABS! <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 ?>
