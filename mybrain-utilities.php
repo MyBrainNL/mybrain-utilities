@@ -9,7 +9,7 @@
  * Plugin URI:        https://mybrain.nl/en/
  * Github URI:        https://github.com/MyBrainNL/mybrain-utilities
  * Description:       My Brain Wordpress Utilities - Backup of configuration files .htaccess and wp-config, stay logged-in longer & a simple OpenStreetMap Map.
- * Version:           1.1.3
+ * Version:           1.1.5
  * Requires at least: 5.2
  * Requires PHP:      7.0
  * Author:            My Brain
@@ -19,7 +19,7 @@
  * Text Domain:       mybrain-utilities
  * Domain Path:       /languages
  *
- * Copyright (C) 1999-2025 My Brain
+ * Copyright (c) 1999-2026 My Brain
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,14 +50,14 @@ if (defined('MYBRAIN_UTILITIES_VERSION') || class_exists('Mybrain_Utilities')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('MYBRAIN_UTILITIES_VERSION', '1.1.3');
+define('MYBRAIN_UTILITIES_VERSION', '1.1.5');
 define('MYBRAIN_UTILITIES_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-mybrain-utilities-activator.php
  */
-function activate_mybrain_utilities()
+function mybrain_utilities_activate_mybrain_utilities()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-mybrain-utilities-activator.php';
     Mybrain_Utilities_Activator::activate();
@@ -67,14 +67,14 @@ function activate_mybrain_utilities()
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-mybrain-utilities-deactivator.php
  */
-function deactivate_mybrain_utilities()
+function mybrain_utilities_deactivate_mybrain_utilities()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-mybrain-utilities-deactivator.php';
     Mybrain_Utilities_Deactivator::deactivate();
 }
 
-register_activation_hook(__FILE__, 'activate_mybrain_utilities');
-register_deactivation_hook(__FILE__, 'deactivate_mybrain_utilities');
+register_activation_hook(__FILE__, 'mybrain_utilities_activate_mybrain_utilities');
+register_deactivation_hook(__FILE__, 'mybrain_utilities_deactivate_mybrain_utilities');
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -91,11 +91,11 @@ require plugin_dir_path(__FILE__) . 'includes/class-mybrain-utilities.php';
  *
  * @since    1.0.0
  */
-function run_mybrain_utilities()
+function mybrain_utilities_run_mybrain_utilities()
 {
 
     $plugin = new Mybrain_Utilities();
     $plugin->run();
 
 }
-run_mybrain_utilities();
+mybrain_utilities_run_mybrain_utilities();

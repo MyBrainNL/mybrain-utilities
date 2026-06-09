@@ -26,7 +26,7 @@ textarea {
     resize: both;
 }
 
-#editor .hidden {
+.editor-styles-wrapper .hidden {
     display: block;
     background-color: #ffff00;
 }

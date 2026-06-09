@@ -4,8 +4,8 @@ Donate link: https://mybrain.nl/en/
 Tags: utilities, openstreetmap, map, htaccess
 Requires at least: 5.2
 Requires PHP: 7.0
-Tested up to: 6.9
-Stable tag: 1.1.3
+Tested up to: 7.0
+Stable tag: 1.1.5
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -14,7 +14,7 @@ My Brain Wordpress Utilities - Backup of configuration files .htaccess and wp-co
 
 == Copyright ==
 
-Copyright (C) 1999-2025 My Brain
+Copyright (c) 1999-2026 My Brain
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ Source: [https://leafletjs.com/](https://leafletjs.com/)
 
 == Description ==
 
-This plugin is a collection of various utilities, used by My Brain for different websites.
+This plugin is a collection of small utilities, used by My Brain for various websites.
 We released this to the Wordpress Plugin repository as we think it is also useful to others.
 
 = HTAccess_Keeper =
@@ -58,6 +58,9 @@ Originally developed because some plugins keep (re)writing to these two files an
 = Keep_me_logged_in =
 Stay logged in longer. WordPress will keep you logged in for 48 hours. If you've clicked the "Remember Me" checkbox at login, you get remembered for 14 days.
 This option keeps your login active longer than the standard Wordpress Login Cookie time-out. You may need to login again after you change the time-out value.
+
+= Need_Login =
+Use the shortcode [need_login] in a page or post, to require "is_user_logged_in()" to view the content.
 
 = Console_Warning =
 This plugin adds a warning in the browser console log to any visitor, to only continue if they understand the code and trust the source.
@@ -115,6 +118,13 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 
 == Changelog ==
+
+= 1.1.5 - 9 June 2026 =
+* Tested Up To WordPress v7.0
+
+= 1.1.4 - 14 March 2026 =
+* Added Shortcode [need_login] to login protect pages or posts
+* Corrected display of 'hidden' content in the page editor
 
 = 1.1.3 - 3 December 2025 =
 * Tested Up To WordPress v6.9

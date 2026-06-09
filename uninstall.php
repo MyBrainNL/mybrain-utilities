@@ -30,5 +30,5 @@ if (! defined('WP_UNINSTALL_PLUGIN')) {
     exit;
 }
 
-$option_name = 'mybrain_utilities_options';
-delete_option($option_name);
+$mybrain_utilities_options_name = 'mybrain_utilities_options';
+delete_option($mybrain_utilities_options_name);

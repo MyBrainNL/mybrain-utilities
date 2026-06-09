@@ -75,7 +75,7 @@ class Mybrain_Utilities_Public
             //20251016 - cleanhead!
             add_action('after_setup_theme', array($this, 'mybrain_utilities_run_cleanhead'), 1);
         }
-
+        add_shortcode('need_login', array($this, 'mybrain_utilities_shortcode_needLogin'));
     }
 
 
@@ -554,6 +554,8 @@ class Mybrain_Utilities_Public
         echo '</li><li>';
         echo 'Keep_me_logged_in';
         echo '</li><li>';
+        echo 'Need_Login';
+        echo '</li><li>';
         echo 'Console_Warning';
         echo '</li><li>';
         echo 'Clean_Head';
@@ -685,6 +687,10 @@ class Mybrain_Utilities_Public
         esc_html_e('You may need to login again after you change the time-out value.', 'mybrain-utilities');
         echo '<br/>';
         esc_html_e('WordPress will keep you logged in for 48 hours. If you\'ve clicked the "Remember Me" checkbox at login, you get remembered for 14 days.', 'mybrain-utilities');
+        echo '<br/>';
+        echo '<br/>';
+        echo '<b>Need_Login</b><br/>';
+        esc_html_e('Use the shortcode [need_login] in a page or post, to require "is_user_logged_in()" to view the content.', 'mybrain-utilities');
         echo '</p>';
     }
 
@@ -907,8 +913,12 @@ class Mybrain_Utilities_Public
     //20240904 - htaccess keeper!
     public function mybrain_utilities_run_htaccess_keeper($args)
     {
-        $filehta = ABSPATH.'.htaccess';
-        $filebck = ABSPATH.'.htaccess-keeper';
+        if (! defined('MYBRAIN_UTILITIES_WEBSITEROOT')) {
+            define('MYBRAIN_UTILITIES_WEBSITEROOT', ABSPATH);
+        }
+
+        $filehta = MYBRAIN_UTILITIES_WEBSITEROOT.'.htaccess';
+        $filebck = MYBRAIN_UTILITIES_WEBSITEROOT.'.htaccess-keeper';
         if (file_exists($filehta)) {
             if (filesize($filehta) > 0) {
                 //check
@@ -955,8 +965,8 @@ class Mybrain_Utilities_Public
                 }
             }
         }
-        $filehta = ABSPATH.'wp-config.php';
-        $filebck = ABSPATH.'wp-config-keeper.php';
+        $filehta = MYBRAIN_UTILITIES_WEBSITEROOT.'wp-config.php';
+        $filebck = MYBRAIN_UTILITIES_WEBSITEROOT.'wp-config-keeper.php';
         if (file_exists($filehta)) {
             if (filesize($filehta) > 0) {
                 //check
@@ -1062,4 +1072,13 @@ class Mybrain_Utilities_Public
         return '<div id="mbu-map" center="'.esc_attr($atts['center']).'" coords="'.esc_attr($atts['coords']).'" zoom="'.esc_attr($atts['zoom']).'" class="'.esc_attr($atts['class']).'"></div>';
     }
 
+
+
+    // 20260313 - [need_login]
+    public function mybrain_utilities_shortcode_needLogin()
+    {
+        if (!is_user_logged_in()) {
+            auth_redirect();
+        }
+    }
 }
